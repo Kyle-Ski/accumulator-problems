@@ -29,8 +29,18 @@ For example, the tests require that to complete this challenge, your function mu
 0 if the input is empty. Please see the README file for an explanation of how to expand the test
 results on the index page in the browser.
 */
+function sum(arry){
+    var accum = 0
+    if (arry === []){
+        return 0
+    } else {
+        for (let index = 0; index < arry.length; index++) {
+            accum += arry[index]
+        }
+        return accum
 
-
+    }
+}
 
 
 
@@ -48,7 +58,13 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
-
+function doubleLetters(string){
+    var accum = ''
+    for (let index = 0; index < string.length; index++) {
+        accum += string[index] + string[index]
+    }
+    return accum
+}
 
 
 
@@ -67,7 +83,13 @@ Write function named doubleNumbers that will take an array of numbers and return
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
-
+function doubleNumbers(arry){
+    accum = []
+    for (let index = 0; index < arry.length; index++) {
+        accum.push(arry[index] * 2)
+    }
+    return accum
+}
 
 
 
@@ -89,7 +111,13 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
-
+function multiplyNumbers(array, num){
+    var accum = []
+    for (let index = 0; index < array.length; index++) {
+        accum.push(array[index] * num)
+    }
+    return accum
+}
 
 
 
@@ -111,7 +139,19 @@ NOTE: you can assume each input will be the same length
 */
 
 
-
+function interleave(array1, array2){
+    var arrayIndex
+    var interleavedArray = []
+    if (typeof array1 === 'object' && typeof array2 === 'object'){
+        for (arrayIndex = 0; arrayIndex < array1.length; arrayIndex++){
+            interleavedArray.push(array1[arrayIndex], array2[arrayIndex])
+        }    
+    }
+    else {
+        return []
+    }
+    return interleavedArray
+}
 
 
 
@@ -131,8 +171,18 @@ Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "
 */
 
 
-
-
+function createRange(number, defValue){
+    var accum = []
+    if (defValue === undefined){
+        return []
+    } else {
+        for (let index = 0; index < number; index++) {
+            accum.push(defValue)  
+        }
+        return accum
+    }
+}
+// console.log(createRange(3, 'hi'))
 
 
 
@@ -149,8 +199,13 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
-
-
+function flipArray(array){
+    accum = {}
+    for (let index = 0; index < array.length; index++) {
+        accum[array[index]] = index
+    }
+    return accum
+}
 
 
 
@@ -169,9 +224,19 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 
 */
 
+function arraysToObject(array){
+    var accum = {}
+    for (let index = 0; index < array.length; index++) {
+        var nestedArray = array[index]
+        for (let j = 0; j < nestedArray.length -1; j++) {
+            accum[nestedArray[j]] = nestedArray[j + 1]            
+        }
+        
+    }
+    return accum
+}
 
-
-
+// console.log(arraysToObject([[2014, "Horse"], [2015, "Sheep"]]))
 
 
 
@@ -189,8 +254,14 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
-
-
+function reverseString(string){
+    var accum = ''
+    for(let i = string.length - 1; i >= 0; i--){
+        accum += string[i]
+    }
+    return accum
+}
+// console.log(reverseString('hello'))
 
 
 
@@ -214,8 +285,18 @@ If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
 
-
-
+function repeats(string){
+    if (string === ''){
+        return true
+    } else if (string.slice(string.length / 2) === string.slice(0,string.length /2)){
+        return true
+    }else if (string.length % 2 !== 0){
+        return false
+    } else {
+        return false
+    }
+}
+// console.log(repeats('racrac'))
 
 
 
@@ -233,8 +314,14 @@ Example:
 If you pass it "abcdef" then it should return "ace" because those represent every other letter
 */
 
-
-
+function everyOther(string){
+    var accum = ''
+    for(let i = 0; i < string.length; i += 2){
+        accum += string[i]
+    }
+    return accum
+}
+// console.log(everyOther('abcdefg'))
 
 
 
@@ -252,10 +339,21 @@ Example:
 If you pass "aaa" it should return true
 If you pass "aba" it should return false
 */
-
-
-
-
+function allEqual(string){
+    var compare = string[0]
+    if (string === ''){
+        return true
+    } else {
+        for(var i = 1; string[i] === compare; i++){
+        }
+        if (i !== string.length){
+            return false
+        } else {
+            return true
+        }
+    }
+}
+// console.log(allEqual('ggggh'))
 
 
 
@@ -273,8 +371,21 @@ If you pass "45" it should return 9
 If you pass "246" it should return 12
 */
 
-
-
+function sumLetters(string){
+    if (string === ''){
+        return 0
+    } else {
+        var numberArray = string.split('')
+        var sum = 0
+        console.log(numberArray)
+        for(let i = 0; i < numberArray.length; i++){
+            console.log(numberArray[i])
+            console.log(typeof numberArray[i])
+        }
+        return sum
+    }
+}
+console.log(sumLetters('89'))
 
 
 
