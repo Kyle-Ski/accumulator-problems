@@ -512,12 +512,16 @@ If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 
 function letterMap(string){
     var obj = {}
-    for (let i = 0; i < string.length; i++){
-        obj[string[i]] = i
+    if (string === ''){
+        return obj
+    } else {
+        for (let i = 0; i < string.length; i++){
+            obj[string[i]] = i
+        }
+        return obj    
     }
-    return obj
 }
-console.log(letterMap('hello'))
+// console.log(letterMap('hello'))
 
 
 
