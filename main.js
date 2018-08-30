@@ -450,10 +450,14 @@ NOTE: do not use the builtin `split` method
 
 function split(string){
     var arr = []
-    for(let i = 0; i < string.length; i++){
-        arr.push(string[i])
+    if (string === ''){
+        return arr
+    } else {
+        for(let i = 0; i < string.length; i++){
+            arr.push(string[i])
+        }
+        return arr    
     }
-    return arr
 }
 console.log(split('you'))
 
