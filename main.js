@@ -38,7 +38,6 @@ function sum(arry){
             accum += arry[index]
         }
         return accum
-
     }
 }
 
@@ -377,15 +376,13 @@ function sumLetters(string){
     } else {
         var numberArray = string.split('')
         var sum = 0
-        console.log(numberArray)
         for(let i = 0; i < numberArray.length; i++){
-            console.log(numberArray[i])
-            console.log(typeof numberArray[i])
+            sum += parseInt(numberArray[i])
         }
         return sum
     }
 }
-console.log(sumLetters('89'))
+// console.log(sumLetters('89'))
 
 
 
@@ -403,8 +400,33 @@ Example:
 If you pass "you" it should return 2
 */
 
-
-
+function countVowels(string){
+    var count = 0
+    var stringArray = string.split('')
+    for(let i = 0; i < stringArray.length; i++){
+        switch(stringArray[i]){
+            case 'a':
+                count++;
+                break;
+            case 'e':
+                count++;
+                break;
+            case 'i':
+                count++;
+                break;
+            case 'o':
+                count++;
+                break;
+            case 'u':
+                count++;
+                break;
+            default:
+                
+        }
+    }
+    return count
+}
+console.log(countVowels('goosebumps'))
 
 
 
