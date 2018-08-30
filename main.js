@@ -605,8 +605,18 @@ Example:
 If you pass "a", 3, "*" it should return "**a" - that is, a string of length 3, padded on the left by the "*" character
 */
 
-
-
+function leftPad(string, length, fill){
+    var filler = ''
+    if (string.length > length){
+        return string
+    } else {
+        for (let i = 0; i < (length - string.length); i++){
+            filler += fill
+        }
+        return filler + string
+    }
+}
+// console.log(leftPad('hello', 7, '%'))
 
 
 
