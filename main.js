@@ -421,12 +421,12 @@ function countVowels(string){
                 count++;
                 break;
             default:
-                
+
         }
     }
     return count
 }
-console.log(countVowels('goosebumps'))
+// console.log(countVowels('goosebumps'))
 
 
 
@@ -448,8 +448,14 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
-
-
+function split(string){
+    var arr = []
+    for(let i = 0; i < string.length; i++){
+        arr.push(string[i])
+    }
+    return arr
+}
+console.log(split('you'))
 
 
 
