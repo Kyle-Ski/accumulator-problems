@@ -545,13 +545,14 @@ function letterCount(string){
     if (string === ''){
         return obj
     } else {
-        for (let i = 0; i < string.length; i++){
-
+        var stringArray = string.split('')
+        for (let i = 0; i < stringArray.length; i++){
+            console.log(stringArray[i])
         }
         return obj    
     }
 }
-
+// console.log(letterCount('hello'))
 
 
 
@@ -572,8 +573,20 @@ If you pass 0,6 it should return true because between 0 and six (the numbers 1,2
 */
 
 
-
-
+function threeOdds(num1, num2){
+    var countOdds = 0
+    for(let i = num1 + 1; i < num2; i++){
+        if (i % 2 !== 0){
+            countOdds++
+        }
+    }
+    if(countOdds >= 3){
+        return true
+    } else {
+        return false
+    }
+}
+// console.log(threeOdds(0,5))
 
 
 
