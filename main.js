@@ -459,7 +459,7 @@ function split(string){
         return arr    
     }
 }
-console.log(split('you'))
+// console.log(split('you'))
 
 
 
@@ -479,7 +479,18 @@ Example:
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
 
-
+function getCodePoints(string){
+    var arr = []
+    if (string === ''){
+        return arr
+    } else {
+        for (let i = 0; i < string.length; i++){
+            arr.push(string.codePointAt(i))
+        }
+    }
+    return arr
+}
+console.log(getCodePoints('the'))
 
 
 
