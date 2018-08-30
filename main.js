@@ -540,7 +540,17 @@ If you pass "Yo" it should return {Y: 1, o: 1}
 If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 */
 
+function letterCount(string){
+    var obj = {}
+    if (string === ''){
+        return obj
+    } else {
+        for (let i = 0; i < string.length; i++){
 
+        }
+        return obj    
+    }
+}
 
 
 
