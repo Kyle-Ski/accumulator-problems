@@ -635,8 +635,14 @@ If you pass "a", 3 it should return "aaa"
 If you pass "b", 3 it should return "bb"
 */
 
-
-
+function createString(number, letter){
+    var newString = ''
+    for (let i = 0; i < number; i++){
+        newString += letter
+    }
+    return newString
+}
+// console.log(createString(4,'l'))
 
 
 
