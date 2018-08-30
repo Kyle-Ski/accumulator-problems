@@ -664,8 +664,14 @@ If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 */
 
 
-
-
+function factorial(number){
+    var num = number
+    for (let i = number - 1; i > 0; i--){
+        num *= i
+    }
+    return num
+}
+console.log(factorial(4))
 
 
 
