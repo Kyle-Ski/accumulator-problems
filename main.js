@@ -490,7 +490,7 @@ function getCodePoints(string){
     }
     return arr
 }
-console.log(getCodePoints('the'))
+// console.log(getCodePoints('the'))
 
 
 
@@ -510,8 +510,14 @@ If you pass "Yo" it should return {Y: 0, o: 1}
 If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 */
 
-
-
+function letterMap(string){
+    var obj = {}
+    for (let i = 0; i < string.length; i++){
+        obj[string[i]] = i
+    }
+    return obj
+}
+console.log(letterMap('hello'))
 
 
 
