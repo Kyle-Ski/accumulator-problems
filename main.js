@@ -796,8 +796,21 @@ Example:
 If you pass [1,1], 1 it should return true
 If you pass [1,2], 1 it should return false
 */
-
-
+function every(array, value){
+    var check = array[0]
+    var count = 0
+    for (let index = 1; index < array.length; index++) {
+        if(array[index] === check){
+            count++
+        } 
+    }
+    if (count !== array.length - 1){
+        return false
+    } else {
+        return true
+    }
+}
+console.log(every([1,1,1,2],1))
 
 
 
