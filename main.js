@@ -866,13 +866,20 @@ function toSentence(array){
         return sentence
     } else {
         for (let index = 0; index < array.length; index++) {
-            sentence += array[index] + ', '
-
+            if(index === array.length - 1){
+                sentence += `and ${array[array.length - 1]}`
+            } else {
+                if (index === array.length - 2){
+                    sentence += `${array[index]} `
+                } else {
+                    sentence += `${array[index]}, `
+                }
+            }
         }    
     }
-    return sentence.slice(0,sentence.length-2)
-}
-console.log(toSentence(["Sue", "Will", "Rachel"]))
+    return sentence.slice(0,sentence.length)
+}   
+console.log(toSentence(["a", "c"]))
 
 
 
