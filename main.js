@@ -831,27 +831,17 @@ If you pass [3,2], 1 it should return false
 */
 function some(array, value){
     var thing = false
-    // if (array === []){
-    //     console.log('i am an empty array')
-    //     return false
-    // } else {
         for (let index = 0; index < array.length; index++) {
-            console.log('the array value im at is ',array[index])
-            console.log('the value is ', value)
             if (!(array.includes(value))) {
-                console.log(!(array.includes(value)),'index',index)
                 thing = false
             } else {
-                console.log('i am going to the end',index)   
                 return thing = true
             }
         }    
-    // }
     return thing
-    console.log('i am not doing anything')
 }
 
-console.log(some([],'e'))
+// console.log(some([],'e'))
 
 
 
@@ -863,15 +853,26 @@ console.log(some([],'e'))
 CHALLENGE
 ----------------------------------------
 
-Write a function named some that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
+Write a function named toSentence that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
 
 Example:
 
 If you pass ["Sue", "Will"] it should return "Sue and Will"
 If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 */
+function toSentence(array){
+    var sentence = ''
+    if (array === []){
+        return sentence
+    } else {
+        for (let index = 0; index < array.length; index++) {
+            sentence += array[index] + ', '
 
-
+        }    
+    }
+    return sentence.slice(0,sentence.length-2)
+}
+console.log(toSentence(["Sue", "Will", "Rachel"]))
 
 
 
