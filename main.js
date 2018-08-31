@@ -83,7 +83,7 @@ Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
 function doubleNumbers(arry){
-    accum = []
+    let accum = []
     for (let index = 0; index < arry.length; index++) {
         accum.push(arry[index] * 2)
     }
@@ -227,7 +227,7 @@ function arraysToObject(array){
     var accum = {}
     for (let index = 0; index < array.length; index++) {
         var nestedArray = array[index]
-        for (let j = 0; j < nestedArray.length -1; j++) {
+        for (let j = 0; j < nestedArray.length - 1; j++) {
             accum[nestedArray[j]] = nestedArray[j + 1]            
         }
         
@@ -344,6 +344,7 @@ function allEqual(string){
         return true
     } else {
         for(var i = 1; string[i] === compare; i++){
+            // console.log(i)
         }
         if (i !== string.length){
             return false
@@ -692,12 +693,27 @@ Example:
 If you pass 1 it should return [1]
 If you pass 3 it should return [1,2,3]
 */
+function arrayOfNumbers(number){
+    var arr = []
+    for (let i = 1; i <= number; i ++){
+        arr.push(i)
+    }
+    return arr
+}
+// console.log(arrayOfNumbers(3))
+// var str = 'hello'
+// console.log([...str])
 
-
-
-
-
-
+// function intenseString(str) {
+    // your code here
+      // if (str.slice(-3) === '!!!' && str[str.indexOf('!') + 1]==='!') {
+      //     return true;
+      // } else {
+      //     return false;
+      // }
+//   return /^!(\!){0+}\!{3+}$/.test(str)
+//   }
+// console.log(intenseString('hello!!'))
 
 
 /*
@@ -711,8 +727,18 @@ Example:
 
 If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "even"}
 */
-
-
+function evenOdd(num1, num2){
+    var obj = {}
+    for (let i = num1; i <= num2; i++){
+        if (i % 2 === 0){
+            obj[i]= 'even' 
+        } else {
+            obj[i] = 'odd'
+        }
+    }
+    return obj
+}
+console.log(evenOdd(1,4))
 
 
 
