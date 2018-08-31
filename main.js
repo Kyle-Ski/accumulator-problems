@@ -879,7 +879,7 @@ function toSentence(array){
     }
     return sentence.slice(0,sentence.length)
 }   
-console.log(toSentence(["a", "c"]))
+// console.log(toSentence(["a", "c"]))
 
 
 
@@ -904,8 +904,15 @@ If you pass ["Sue", "Will"] it should return "SW"
 If you pass ["Java", Script", "Object", "Notation"] it should return "JSON"
 */
 
-
-
+function acronym(array){
+    let acr = ''
+    for (let index = 0; index < array.length; index++) {
+        let word = array[index]
+        acr += word.charAt(0)
+        }
+    return acr
+}
+console.log(acronym(["Java", "Script", "Object", "Notation"]))
 
 
 
