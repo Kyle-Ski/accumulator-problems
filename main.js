@@ -912,7 +912,7 @@ function acronym(array){
         }
     return acr
 }
-console.log(acronym(["Java", "Script", "Object", "Notation"]))
+// console.log(acronym(["Java", "Script", "Object", "Notation"]))
 
 
 
@@ -930,8 +930,15 @@ Example:
 If you pass [0,-3,2,5] it should return -3
 */
 
-
-
+function min(array){
+    if (array === []){
+        return undefined
+    } else {
+        array.sort(function (a, b) {  return a - b;  })
+        return array[0]    
+    }
+}
+console.log(min([0,-3,2,5]))
 
 
 
