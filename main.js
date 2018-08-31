@@ -830,25 +830,28 @@ If you pass [1,2], 1 it should return true
 If you pass [3,2], 1 it should return false
 */
 function some(array, value){
-    if (array === []){
-        console.log('i am an empty array')
-        return false
-    } else {
+    var thing = false
+    // if (array === []){
+    //     console.log('i am an empty array')
+    //     return false
+    // } else {
         for (let index = 0; index < array.length; index++) {
-            console.log(array[index])
-            console.log(value)
-            if (array.hasOwnProperty(value)) {
-                return true
+            console.log('the array value im at is ',array[index])
+            console.log('the value is ', value)
+            if (!(array.includes(value))) {
+                console.log(!(array.includes(value)),'index',index)
+                thing = false
             } else {
-                console.log('i am going to the end')   
-                return false
+                console.log('i am going to the end',index)   
+                return thing = true
             }
         }    
-    }
+    // }
+    return thing
     console.log('i am not doing anything')
 }
 
-console.log(some(['a','b','c'],'b'))
+console.log(some([],'e'))
 
 
 
