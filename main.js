@@ -650,8 +650,13 @@ function createString(number, letter){
 // console.log(createString(4,'l'))
 
 
-
-
+// function factorial2(num){
+//     if (num === 0){
+//         return 1
+//     }
+//     return num * factorial2(num -1)
+// }
+// console.log(factorial2(4))
 
 /*
 ----------------------------------------
@@ -670,14 +675,13 @@ If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 
 
 function factorial(number){
-    var num = number
     if (number === 0){
         return 1
     } else {
         for (let i = number - 1; i > 0; i--){
-            num *= i
+            number *= i
         }
-        return num    
+        return number    
     }
 }
 // console.log(factorial(4))
@@ -938,7 +942,7 @@ function min(array){
         return array[0]    
     }
 }
-console.log(min([0,-3,2,5]))
+// console.log(min([0,-3,2,5]))
 
 
 
@@ -959,8 +963,15 @@ Example:
 If you pass [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}] it should return {1: {id: 1, name: "Joe"}, 2: {id: 2, name: "Sue"}}
 
 */
-
-
+function index(array,property){
+    let obj = {}
+    for (let index = 0; index < array.length; index++) {
+        let nestedObj = array[index]
+        obj[nestedObj[property]] = nestedObj
+    }
+    return obj
+}
+// console.log(index([{id: 1, name: "Joe"}, {id: 2, name: "Sue"}],'name'))
 
 
 
@@ -979,8 +990,14 @@ Example:
 If you pass {id: 1, name: "Joe"} it should return {1: "id", Joe: "name"}
 */
 
-
-
+function invert(object){
+    let obj = {}
+    for(let key in object){
+        obj[object[key]]= object
+    }
+    return obj
+}
+console.log(invert({id: 1, name: "Joe"}))
 
 
 
