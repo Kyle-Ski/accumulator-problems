@@ -548,7 +548,11 @@ function letterCount(string){
     } else {
         var stringArray = string.split('')
         for (let i = 0; i < stringArray.length; i++){
-            console.log(stringArray[i])
+            if (obj.hasOwnProperty(stringArray[i])){
+                obj[stringArray[i]] += 1
+            } else {
+                obj[stringArray[i]] = 1
+            }
         }
         return obj    
     }
@@ -729,16 +733,20 @@ If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "eve
 */
 function evenOdd(num1, num2){
     var obj = {}
-    for (let i = num1; i <= num2; i++){
-        if (i % 2 === 0){
-            obj[i]= 'even' 
-        } else {
-            obj[i] = 'odd'
+    if((num1, num2) === 0){
+        return obj
+    } else {
+        for (let i = num1; i <= num2; i++){
+            if (i % 2 === 0){
+                obj[i]= 'even' 
+            } else {
+                obj[i] = 'odd'
+            }
         }
+        return obj    
     }
-    return obj
 }
-console.log(evenOdd(1,4))
+// console.log(evenOdd(0,1))
 
 
 
@@ -758,10 +766,19 @@ Example:
 If you pass 2,"d" it should return {"d": true, "dd": true}
 */
 
+function growingKeys(number, string){
+    var obj = {}
+    if (number === 0){
+        return {}
+    } else {
+        for (let index = 1; index <= number; index++) {
+            obj[string.repeat(index)] = true
+        }return obj
+    }
+}
 
 
-
-
+// console.log(growingKeys(5,'d'))
 
 
 
