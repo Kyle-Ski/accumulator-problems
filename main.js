@@ -810,7 +810,7 @@ function every(array, value){
         return true
     }
 }
-console.log(every([1,1,1,2],1))
+// console.log(every([1,1,1,2],1))
 
 
 
@@ -829,8 +829,26 @@ Example:
 If you pass [1,2], 1 it should return true
 If you pass [3,2], 1 it should return false
 */
+function some(array, value){
+    if (array === []){
+        console.log('i am an empty array')
+        return false
+    } else {
+        for (let index = 0; index < array.length; index++) {
+            console.log(array[index])
+            console.log(value)
+            if (array.hasOwnProperty(value)) {
+                return true
+            } else {
+                console.log('i am going to the end')   
+                return false
+            }
+        }    
+    }
+    console.log('i am not doing anything')
+}
 
-
+console.log(some(['a','b','c'],'b'))
 
 
 
