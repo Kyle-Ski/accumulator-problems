@@ -757,7 +757,7 @@ function evenOdd(num1, num2){
         return obj    
     }
 }
-console.log(evenOdd(0,7))
+// console.log(evenOdd(0,7))
 
 
 
@@ -1132,9 +1132,9 @@ Example:
 If you pass {1999: 4036, 2000: 7654} it should return '2000'
 */
 function biggestProperty(object){
+    var arr = []
     for(let key in object){
-        if (object.hasOwnProperty(key) !== true){
-            var arr = []
+        if (object.hasOwnProperty(key) === true){
             for(let key in object){
                 arr.push([key, object[key]])
             }
@@ -1148,7 +1148,7 @@ function biggestProperty(object){
    
 }
 
-console.log(biggestProperty({1999: 4036, 2000: 7654}))
+console.log(biggestProperty({1999: 4036, 'c': 7654}))
 
 
 
