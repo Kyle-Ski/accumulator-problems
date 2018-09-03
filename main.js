@@ -1191,17 +1191,27 @@ function keyForValue(object, value){
 CHALLENGE
 ----------------------------------------
 
-Write a function named containsValue that takes an object and a value and returns true if the object contains the value
+Write a function named containsValue that takes an object and a value and 
+returns true if the object contains the value
 
 Example:
 
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
-function e(num1,num2){
-
+function containsValue(object, value){
+    if (Object.keys(object).length === 0){
+        return false
+    } else {
+        for(let key in object){
+            if (object[key] === value){
+                return true 
+            } else {
+                return false
+            }
+        }    
+    }
 }
-
-
+console.log(containsValue({}, 436))
 
 
 
