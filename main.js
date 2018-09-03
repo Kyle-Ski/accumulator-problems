@@ -351,6 +351,13 @@ function allEqual(string){
         } else {
             return true
         }
+        // for(let i = 0; i < input.length; i++){
+        //     if (input[i] !== input[0]){
+        //           return false
+        //     } 
+        // }
+        // return true
+    
     }
 }
 // console.log(allEqual('ggggh'))
@@ -750,7 +757,7 @@ function evenOdd(num1, num2){
         return obj    
     }
 }
-// console.log(evenOdd(0,1))
+console.log(evenOdd(0,7))
 
 
 
@@ -993,14 +1000,36 @@ If you pass {id: 1, name: "Joe"} it should return {1: "id", Joe: "name"}
 function invert(object){
     let obj = {}
     for(let key in object){
-        obj[object[key]]= object
+        obj[object[key]] = key 
     }
     return obj
 }
-console.log(invert({id: 1, name: "Joe"}))
+// console.log(invert({id: 1, name: "Joe"}))
 
+function repeats2(a){
+    // let newarray = []
+    // for (let i = 0; i < a.length; i++){
+    //     newarray.push(a[i])
+    //     if (newarray[i] % 2 === 0){
+    //         return newarray = true
+    //     } else {
+    //         return true
+    //     }
+    // }
+    if (a.length % 2 !== 0){
+        return false
+    } else if (a.length % 2 === 0){
+        let length = a.length/2
+        let front = a.slice(length) 
+        let back = a.slice(-length)
+        a.slice(-(a.length/2))
+        console.log('this is length:', length, 'this is negative',-length)
 
+        console.log('This is the front:',front,'\nThis is the back:',back)
+    }
 
+}
+// console.log(repeats2('111222'))
 
 
 /*
@@ -1018,9 +1047,16 @@ Example:
 If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "foo - Fred"}
 */
 
+function addSignature(object, name){
+    let newObj = {}
+    for(key in object){
+        let signed = `${key}-signed`
+        newObj[signed] = `${object[key]} - ${name}`
+    }
+    return newObj
+}
 
-
-
+// console.log(addSignature({"code of contract": "foo foo"}, "Fred"))
 
 
 
@@ -1030,14 +1066,22 @@ If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "fo
 CHALLENGE
 ----------------------------------------
 
-Write a function named pairs that takes an object and returns an array of strings of key/value pairs
+Write a function named pairs that takes an object and returns an array of 
+strings of key/value pairs
 
 Example:
 
-If you pass {name: "Will", age: 24} it should return ["name - will", "age - 24"]
+If you pass {name: "Will", age: 24} it should return 
+["name - will", "age - 24"]
 */
-
-
+function pairs(object){
+    let array = []
+    for(let key in object){
+        array.push(key + ' - ' + object[key])
+    }
+    return array
+}
+// console.log(pairs({name: "Will", age: 24}))
 
 
 
@@ -1049,15 +1093,27 @@ If you pass {name: "Will", age: 24} it should return ["name - will", "age - 24"]
 CHALLENGE
 ----------------------------------------
 
-Write a function named sumValues that takes an object and returns the sum of the values
+Write a function named sumValues that takes an object and returns the sum 
+of the values
 
 Example:
 
 If you pass {a: 1, b: 2} it should return 3
 */
-
-
-
+function sumValues(object){
+    let answer = 0
+    if (object === {}){
+        return answer
+    } else {
+        for(let key in object){
+        answer += object[key]
+        }
+        return answer
+    
+    }
+}
+  
+// console.log(sumValues({a: 1, b: 2}))
 
 
 
@@ -1068,18 +1124,31 @@ If you pass {a: 1, b: 2} it should return 3
 CHALLENGE
 ----------------------------------------
 
-Write a function named biggestProperty that takes an object and returns the name of the property with the highest value
+Write a function named biggestProperty that takes an object and returns the 
+name of the property with the highest value
 
 Example:
 
 If you pass {1999: 4036, 2000: 7654} it should return '2000'
 */
+function biggestProperty(object){
+    for(let key in object){
+        if (object.hasOwnProperty(key) !== true){
+            var arr = []
+            for(let key in object){
+                arr.push([key, object[key]])
+            }
+            arr.sort(function(a, b) {return a[1] - b[1];})
+            console.log(object)
+            return arr[arr.length - 1][0]    
+        } else {
+            return undefined    
+        }
+    }
+   
+}
 
-
-
-
-
-
+console.log(biggestProperty({1999: 4036, 2000: 7654}))
 
 
 
@@ -1093,15 +1162,23 @@ If you pass {1999: 4036, 2000: 7654} it should return '2000'
 CHALLENGE
 ----------------------------------------
 
-Write a function named keyForValue that takes an object and a value and returns the name of the property that matches that value
+Write a function named keyForValue that takes an object and a value and returns the 
+name of the property that matches that value
 
 Example:
 
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return '1999'
 */
 
-
-
+function keyForValue(object, value){
+    for (let key in object) {
+        //target key using value
+        if (object[key] === value) {
+            return key
+        }
+    }
+}
+// console.log(keyForValue({1999: 4036, 2000: 7654}, 4036))
 
 
 
@@ -1120,7 +1197,9 @@ Example:
 
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
+function e(num1,num2){
 
+}
 
 
 
