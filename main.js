@@ -1199,19 +1199,18 @@ Example:
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
 function containsValue(object, value){
+    var arr = []
     if (Object.keys(object).length === 0){
         return false
     } else {
-        for(let key in object){
-            if (object[key] === value){
+            if (Object.values(object).indexOf(value) > -1){
                 return true 
             } else {
                 return false
             }
-        }    
-    }
+        } 
 }
-console.log(containsValue({}, 436))
+console.log(containsValue({1999: 4036, 2000: 7654}, 7654))
 
 
 
