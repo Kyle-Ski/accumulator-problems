@@ -3,7 +3,7 @@
 SAMPLE
 ----------------------------------------
 
-Challenge: Write function named test that returns the string "This Works!".
+Challenge: Write function name test that returns the string "This Works!".
 Solution: This one has already been completed for you.
 
 */
@@ -1047,7 +1047,7 @@ Example:
 If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "foo - Fred"}
 */
 
-function addSignature(object, name){
+function addSignature(name, object){
     let newObj = {}
     for(key in object){
         let signed = `${key}-signed`
@@ -1056,7 +1056,8 @@ function addSignature(object, name){
     return newObj
 }
 
-console.log(addSignature({"code of contract": "foo"}, "Fred"))
+console.log(addSignature("Fred",{"code of contract": "foo"}))
+
 
 
 
