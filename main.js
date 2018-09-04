@@ -888,9 +888,9 @@ function toSentence(array){
             }
         }    
     }
-    return sentence.slice(0,sentence.length)
+    return sentence
 }   
-// console.log(toSentence(["a", "c"]))
+// console.log(toSentence(["a",'l', "c"]))
 
 
 
@@ -1056,7 +1056,7 @@ function addSignature(object, name){
     return newObj
 }
 
-// console.log(addSignature({"code of contract": "foo foo"}, "Fred"))
+console.log(addSignature({"code of contract": "foo"}, "Fred"))
 
 
 
@@ -1100,18 +1100,18 @@ Example:
 
 If you pass {a: 1, b: 2} it should return 3
 */
-function sumValues(object){
-    let answer = 0
-    if (object === {}){
-        return answer
-    } else {
-        for(let key in object){
-        answer += object[key]
+    function sumValues(object){
+        let answer = 0
+        if (object === {}){
+            return answer
+        } else {
+            for(let key in object){
+            answer += object[key]
+            }
+            return answer
+        
         }
-        return answer
-    
     }
-}
   
 // console.log(sumValues({a: 1, b: 2}))
 
@@ -1139,16 +1139,14 @@ function biggestProperty(object){
                 arr.push([key, object[key]])
             }
             arr.sort(function(a, b) {return a[1] - b[1];})
-            console.log(object)
             return arr[arr.length - 1][0]    
         } else {
             return undefined    
         }
     }
-   
 }
 
-console.log(biggestProperty({1999: 4036, 'c': 7654}))
+// console.log(biggestProperty({1999: 4036, 'c': 7654}))
 
 
 
@@ -1172,7 +1170,6 @@ If you pass {1999: 4036, 2000: 7654} and 4036, it should return '1999'
 
 function keyForValue(object, value){
     for (let key in object) {
-        //target key using value
         if (object[key] === value) {
             return key
         }
@@ -1203,14 +1200,14 @@ function containsValue(object, value){
     if (Object.keys(object).length === 0){
         return false
     } else {
-            if (Object.values(object).indexOf(value) > -1){
-                return true 
-            } else {
-                return false
-            }
-        } 
+        if (Object.values(object).indexOf(value) > -1){
+            return true 
+        } else {
+            return false
+        }
+    } 
 }
-console.log(containsValue({1999: 4036, 2000: 7654}, 7654))
+// console.log(containsValue({1999: 4036, 2000: 7654}, 7654))
 
 
 
