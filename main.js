@@ -1198,6 +1198,16 @@ Example:
 
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
+// function containsValue(object, value){
+//     if (Object.keys(object).length === 0){
+//         return false
+//     } else {
+//         if (Object.values(object).indexOf(value) > -1){
+//             return true 
+//         } else {
+//             return false
+//         }
+//     } 
 function containsValue(object, value){
     if (Object.keys(object).length === 0){
         return false
@@ -1209,14 +1219,19 @@ function containsValue(object, value){
         }
     } 
 }
-
-
-// function containsValue(){
-
+// function containsValue(obj, val){
+//     if (Object.values(obj).length === 0){
+//         return false
+//     }
+//         if (Object.values(obj).includes(val)){
+//             return true
+//         } else {
+//             return false
+//         }
 // }
-// console.log(containsValue({1999: 4036, 2000: 7654}, 754))
 
 
+// console.log(containsValue({1999: 4036, 2000: 7654}, 7654))
 
 
 
