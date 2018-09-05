@@ -1133,18 +1133,13 @@ Example:
 If you pass {1999: 4036, 2000: 7654} it should return '2000'
 */
 function biggestProperty(object){
-    var arr = []
+    var largest = 0
     for(let key in object){
-        if (object.hasOwnProperty(key) === true){
-            for(let key in object){
-                arr.push([key, object[key]])
-            }
-            arr.sort(function(a, b) {return a[1] - b[1];})
-            return arr[arr.length - 1][0]    
-        } else {
-            return undefined    
-        }
+        if (object[key] > largest){
+            largest = object[key]
+        } 
     }
+    return largest
 }
 
 // console.log(biggestProperty({1999: 4036, 'c': 7654}))
