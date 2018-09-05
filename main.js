@@ -1056,7 +1056,7 @@ function addSignature(name, object){
     return newObj
 }
 
-console.log(addSignature("Fred",{"code of contract": "foo"}))
+// console.log(addSignature("Fred",{"code of contract": "foo"}))
 
 
 
@@ -1132,17 +1132,24 @@ Example:
 
 If you pass {1999: 4036, 2000: 7654} it should return '2000'
 */
-function biggestProperty(object){
+function biggestProperty(obj){
     var largest = 0
-    for(let key in object){
-        if (object[key] > largest){
-            largest = object[key]
+    var theKey = ''
+    if (Object.values(obj).length === 0){
+        return undefined
+    } else {
+        for(var key in obj){
+            if (obj[key] > largest){
+                largest = obj[key]
+                theKey = key
+            } 
         } 
+        return theKey
     }
-    return largest
 }
 
-// console.log(biggestProperty({1999: 4036, 'c': 7654}))
+
+console.log(biggestProperty({}))
 
 
 
@@ -1192,7 +1199,6 @@ Example:
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
 function containsValue(object, value){
-    var arr = []
     if (Object.keys(object).length === 0){
         return false
     } else {
@@ -1203,7 +1209,12 @@ function containsValue(object, value){
         }
     } 
 }
-// console.log(containsValue({1999: 4036, 2000: 7654}, 7654))
+
+
+// function containsValue(){
+
+// }
+// console.log(containsValue({1999: 4036, 2000: 7654}, 754))
 
 
 
